@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { useChatContext, Channel } from "stream-chat-react";
 import Game from "./Game";
+
 import CustomInput from "./CustomInput";
+import { Button } from "@mui/material";
+
 function JoinGame() {
   const [rivalUsername, setRivalUsername] = useState("");
   const { client } = useChatContext();
@@ -36,7 +39,10 @@ function JoinGame() {
               setRivalUsername(event.target.value);
             }}
           />
-          <button onClick={createChannel}> Join/Start Game</button>
+          <Button variant="contained" onClick={createChannel}>
+            {" "}
+            Join/Start Game
+          </Button>
         </div>
       )}
     </>

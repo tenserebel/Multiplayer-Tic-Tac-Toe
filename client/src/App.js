@@ -8,10 +8,13 @@ import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import JoinGame from "./components/JoinGame";
 
+import { Button } from "@mui/material";
+
 function App() {
   const cookies = new Cookies();
   const token = cookies.get("token");
-  const api_key = "43gpe8vkzbue";
+  // Use the stream key here.
+  const api_key = "";
 
   const client = StreamChat.getInstance(api_key);
   const [isAuth, setIsAuth] = useState(false);
@@ -49,8 +52,14 @@ function App() {
     <div className="App">
       {isAuth ? (
         <Chat client={client}>
-          <JoinGame />
-          <button onClick={logOut}>Logout</button>
+          <div>
+            <JoinGame />
+          </div>
+          <div className="logout">
+            <Button variant="contained" onClick={logOut}>
+              Logout
+            </Button>
+          </div>
         </Chat>
       ) : (
         <>

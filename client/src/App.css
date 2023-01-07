@@ -49,11 +49,15 @@ h4 {
   font-size: 30px;
 }
 
+.joinGame {
+  margin-left: -10em;
+}
+
 .joinGame input {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  width: 220px;
+  width: 200px;
   height: 30px;
 }
 .joinGame button {
@@ -63,4 +67,10 @@ h4 {
   width: 220px;
   height: 51px;
   cursor: pointer;
+}
+
+.logout {
+  display: flex;
+  margin-top: 15rem;
+  margin-left: -15rem;
 }
